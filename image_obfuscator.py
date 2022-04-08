@@ -85,7 +85,7 @@ def create_obfuscated_images(image_name):
         name = name.replace(".jpg", "")        
 
         # Save the image
-        obfuscated_image.save(name, path=f"{landmark}/")
+        obfuscated_image.save(f"{landmark}/{name}")
 
 # directory = sys.argv[1]
 directory = "../jaffejpeg"
