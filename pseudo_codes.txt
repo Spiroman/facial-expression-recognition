@@ -1,0 +1,28 @@
+# Pseudo codes
+
+// General obfuscation flow
+for each image in jaffe
+    features = detect_facial_features(image)
+    obfuscation_areas = determine_bounds(features)
+    obfuscated_images = obfuscate_images(image, obfuscation_areas)
+    save_image(obfuscated_images)
+
+// Detecting facial features
+detect_facial_features(image)
+    image = face_recognition(image)
+    face_landmarks_list = face_recognition.face_landmarks(image)
+    relevant_landmarks = extract_relevant(face_landmarks_list)
+
+// Obfuscation areas
+obfuscation_areas(features)
+    for each coordinate in features
+        extract min & max x,y coordinates
+    add padding to bounding boxes
+
+// Create separate copies of the obfuscated image with different 
+// regions being obfuscated
+obfuscate_images(image, obfuscation_areas)
+    for each area in obfuscation_areas
+        create image copy
+        obfuscate area
+    return images

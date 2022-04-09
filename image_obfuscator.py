@@ -50,13 +50,11 @@ def get_landmarks(image):
     bottom_lip = face_landmarks_list[0]['bottom_lip']
     return left_eye, right_eye, top_lip, bottom_lip
 
-def create_obfuscated_images(image_name):
-    left_eye, right_eye, top_lip, bottom_lip = get_landmarks(image_name)
-    landmarks = ("eyes", "mouth")
+def create_obfuscated_images(image_name, landmarks):
+    left_eye, right_eye, top_lip, bottom_lip = get_landmarks(image_name)    
     for landmark in landmarks:
         image = Image.open(image_name)
         image = image.convert("RGB")
-
         # Image sizes are the same in both cases so we'll arbitrarily choose the eyes...
         width, height = image.size
         min_x, max_x, min_y, max_y = get_initial_bounds(width, height)
@@ -85,12 +83,12 @@ def create_obfuscated_images(image_name):
         name = name.replace(".jpg", "")        
 
         # Save the image
-        obfuscated_image.save(f"{landmark}/{name}")
+        # obfuscated_image.save(f"both/{name}")
 
 # directory = sys.argv[1]
 directory = "../jaffejpeg"
+landmarks = ("eyes", "mouth")
 for root, dirs, files in os.walk(directory):
     for file in files:
         if file.endswith('.jpg'):
-            # print(f"{directory}/{file}")
-            image = create_obfuscated_images(f"{directory}/{file}")
+            image = create_obfuscated_images(f"{directory}/{file}", landmarks)
