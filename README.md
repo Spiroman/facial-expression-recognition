@@ -16,4 +16,4 @@ And you're done. You should now have two new folders called eyes and mouth which
 
 ### Classifying the emotion of the obfuscated face
 We used this amazing [facial expression recgnition project](https://github.com/ashishpatel26/Facial-Expression-Recognization-using-JAFFE) for our model, and introduced some changes to match new libraries, and added some additional analysis info.  
-To reproduce our steps you'll need to run the previous step for the image obfuscation, after which you can use Google's Collab notebooks with the `FER_JAFFE_CNN.ipynb` notebook and simply run it (some additional, minor instructions are provided inside).
+To reproduce our steps you'll need to run the previous step for the image obfuscation, after which you can use Google's Collab notebooks with the `FER_JAFFE_CNN.ipynb` notebook and simply run it (some additional, minor instructions are provided inside).  To extract extra insights do the same with the `results_analysis.ipynb` notebook, you'll have to upload your results from the last steps of the first notebook.
