@@ -15,3 +15,5 @@ To run the script run the following in your terminal: `python3 image_obfuscator.
 And you're done. You should now have two new folders called eyes and mouth which hold your obfuscated images.
 
 ### Classifying the emotion of the obfuscated face
+We used this amazing [facial expression recgnition project](https://github.com/ashishpatel26/Facial-Expression-Recognization-using-JAFFE) for our model, and introduced some changes to match new libraries, and added some additional analysis info.  
+To reproduce our steps you'll need to run the previous step for the image obfuscation, after which you can use Google's Collab notebooks with the `FER_JAFFE_CNN.ipynb` notebook and simply run it (some additional, minor instructions are provided inside).
